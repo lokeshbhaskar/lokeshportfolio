@@ -16,7 +16,7 @@ import { FaLink } from 'react-icons/fa';
 
 const Projects = () => {
   return (
-    <div className="flex w-full flex-col md:flex-row min-h-screen bg-black text-white px-2 md:px-8 py-10 gap-8 ">
+    <div className="flex w-full flex-col md:flex-row min-h-screen bg-black text-white px-2 md:px-8 py-20 gap-8 ">
       {/* Left Section */}
       <div className="w-full md:w-1/6 flex flex-col md:flex-row justify-around items-center ">
         <p className="text-3xl text-gray-400 cursor-pointer">[02]</p>
@@ -32,7 +32,6 @@ const Projects = () => {
             <div key={project.id} className="border p-1 md:p-4 rounded-lg shadow">
               <h2 className="text-xl font-bold mb-2">{project.title}</h2>
               <p className="text-gray-600">{project.description}</p>
-              
               {/* Mobile Swiper */}
               <div className="w-full md:hidden mt-3 overflow-hidden rounded-md px-4">
                 <Swiper
