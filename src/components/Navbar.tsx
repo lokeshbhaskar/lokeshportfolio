@@ -20,10 +20,10 @@ const Navbar = () => {
             {isRotate && (
                 <div
                     className="fixed inset-0 bg-black/40 backdrop-blur-sm z-10"
-                    onClick={() => setIsRotate(false)}  
+                    onClick={() => setIsRotate(false)}
                 />
             )}
-            
+
             {/* Dropdown menu */}
             <div className={`fixed top-20 left-4 md:left-20 p-3 rounded-md z-50 transition-all duration-300 
                 ${isRotate ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}
@@ -39,10 +39,10 @@ const Navbar = () => {
                                 transitionDelay: `${index * 0.2}s`
                             }}
                         >
-                            <Link 
-                                href={item.path} 
-                                className={`flex items-center w-full gap-2 auto-underline ${isRotate ? "active" : ""}`} 
-                                onClick={()=>setIsRotate(false)}
+                            <Link
+                                href={item.path}
+                                className={`flex items-center w-full gap-2 auto-underline ${isRotate ? "active" : ""}`}
+                                onClick={() => setIsRotate(false)}
                             >
                                 {item.name}
                                 <GoArrowUpRight />
@@ -66,9 +66,10 @@ const Navbar = () => {
                 </button>
 
                 {/* Logo */}
-                <div className={`font-bold text-xl md:text-2xl text-white text-center auto-underline`}>
+                <div className={`font-bold  text-xl md:text-2xl text-white text-center auto-underline`}>
                     Lokesh Portfolio
                 </div>
+                
 
                 {/* Connect button (desktop only) */}
                 <div className="hidden md:block">

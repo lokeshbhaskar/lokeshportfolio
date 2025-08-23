@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         <ScrollProgress />
         <Navbar />
         {children}
