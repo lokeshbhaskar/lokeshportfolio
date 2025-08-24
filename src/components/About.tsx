@@ -1,13 +1,12 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="bg-[#131315] min-h-screen text-white px-6 md:px-20 py-12 mt-6 flex items-center rounded-4xl">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-        
+    <div className="bg-[#131315] min-h-screen text-white px-6 md:px-12 py-12 flex items-center mt-6 rounded-4xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-center w-full overflow-hidden">
         {/* Left Content */}
         <motion.div
           className="space-y-6 text-left"
@@ -55,7 +54,7 @@ const About = () => {
             width={300}
             height={300}
             alt="Lokesh Portfolio"
-            className="shadow-[0_4px_30px_rgba(255,255,255,0.25)] object-contain w-[70%] md:w-[80%] rounded-3xl"
+            className="shadow-[0_4px_30px_rgba(255,255,255,0.25)] object-contain w-full max-w-[300px] rounded-3xl"
           />
         </motion.div>
 
