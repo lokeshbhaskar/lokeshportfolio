@@ -1,93 +1,87 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
-import projectdata from '../../src/data/projects.json';
+import React from "react";
+import Image from "next/image";
+import projectdata from "../../src/data/projects.json";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import { FaLinkSlash } from 'react-icons/fa6';
-import { FaLink } from 'react-icons/fa';
+import { FaLink } from "react-icons/fa";
 
 const Projects = () => {
   return (
-    <div className="flex w-full flex-col md:flex-row min-h-screen bg-black text-white px-2 md:px-8 py-20 gap-8 ">
-      {/* Left Section */}
-      <div className="w-full md:w-1/6 flex flex-col md:flex-row justify-around items-center ">
-        <p className="text-3xl text-gray-400 cursor-pointer">[02]</p>
-        <p className="text-3xl mt-3 md:text-5xl hover:text-amber-200 text-gray-300 font-extrabold cursor-pointer md:[writing-mode:vertical-lr]">
+    <div className="relative w-full min-h-screen bg-[#131315] text-white  mt-6 rounded-4xl">
+      {/* Left Section Label */}
+      <div className="absolute left-4 top-10 hidden md:flex flex-col items-center z-10">
+        <p className="text-3xl text-gray-400">[ 02 ]</p>
+        <p className="text-5xl font-extrabold text-gray-300 hover:text-amber-200    ">
           Projects
         </p>
       </div>
 
-      {/* Right Section */}
-      <div className="w-full md:w-5/6 px-0 md:px-4  gap-2 overflow-hidden">
-        <div className="grid  md:grid-cols-2 gap-6">
-          {projectdata.map((project) => (
-            <div key={project.id} className="border p-1 md:p-4 rounded-lg shadow">
-              <h2 className="text-xl font-bold mb-2">{project.title}</h2>
-              <p className="text-gray-600">{project.description}</p>
-              {/* Mobile Swiper */}
-              <div className="w-full md:hidden mt-3 overflow-hidden rounded-md px-4">
-                <Swiper
-                  modules={[Autoplay]}
-                  spaceBetween={10}
-                  slidesPerView={1}
-                  autoplay={{ delay: 3000, disableOnInteraction: false }}
-                  loop={true}
-                   width={250}
-                >
-                  {project.images.map((img, index) => (
-                    <SwiperSlide key={index}
-                    >
-                      <div className="relative w-full h-[250px] overflow-hidden rounded-md">
-                        <Image
-                          src={img}
-                          alt={`project image ${index}`}
-                          fill
-                          sizes="100vw"
-                          className="object-contain rounded-md"
-                          priority
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+      {/* Fullscreen Swiper for Projects */}
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        spaceBetween={50}
+        slidesPerView={1}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        loop={true}
+        className="h-screen"
+      >
+        {projectdata.map((project) => (
+          <SwiperSlide key={project.id} className="flex items-center justify-center h-screen px-6 md:px-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10 items-center w-full h-full">
+              
+              {/* Project Image */}
+              <div className="relative w-full h-[200px] md:h-[500px] overflow-hidden rounded-2xl shadow-lg">
+                <Image
+                  src={project.images[0]} // first image as main
+                  alt={project.title}
+                  fill
+                  className="object-contain hover:scale-105 transition-transform duration-700 rounded-2xl"
+                />
               </div>
-              {/* Desktop Swiper */}
-              <div className="hidden md:block mt-3">
-                <Swiper
-                  modules={[Autoplay]}
-                  spaceBetween={10}
-                  slidesPerView={1}
-                  autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-                  loop={true}
-                >
+              {/* Project Details */}
+              <div className="backdrop-blur-md bg-white/10 p-8 rounded-2xl shadow-lg border border-white/20">
+                <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
+                <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
+
+                {/* Thumbnails */}
+                <div className="flex gap-2 mb-6 overflow-x-auto">
                   {project.images.map((img, index) => (
-                    <SwiperSlide key={index}>
+                    <div key={index} className="relative w-24 h-16 rounded-lg overflow-hidden">
                       <Image
                         src={img}
-                        width={400}
-                        height={300}
-                        alt={`${project.title} ${index}`}
-                        className="object-contain rounded-md transition"
+                        alt={`thumbnail ${index}`}
+                        fill
+                        className="object-cover hover:scale-110 transition-transform duration-500"
                       />
-                    </SwiperSlide>
+                    </div>
                   ))}
-                </Swiper>
+                </div>
+
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-400 text-black font-semibold hover:bg-amber-300 transition"
+                >
+                  <FaLink /> Visit Project
+                </a>
               </div>
-              <a className='text-md text-gray-200' href={project.link}>visit {project.title}   </a>
             </div>
-          ))}
-        </div>
-        <div className='w-full text-center mt-8' >
-          <h2 className='font-bold text-3xl'>Featured Projects...</h2>
-        </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Footer */}
+      <div className="absolute bottom-6 w-full text-center text-lg text-gray-400">
+        Scroll or Swipe → Featured Projects
       </div>
     </div>
   );

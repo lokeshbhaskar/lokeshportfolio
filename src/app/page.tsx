@@ -6,7 +6,7 @@ import Projects from "../components/Projects";
 
 export default function Home() {
   return (
-    <main className="bg-white dark:bg-black text-black dark:text-white">
+    <main className="px-2 md:px-10 py-1 md:py-4">
       <Hero  />
       <About />
       <Projects />

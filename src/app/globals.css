@@ -45,7 +45,7 @@
 
 body {
   overflow-x: hidden;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .icon {
@@ -131,7 +131,7 @@ body {
 .hover-underline::after {
   content: "";
   position: absolute;
-  top:1;
+  top: 1;
   bottom: 0;
   left: 0;
   width: 0;
@@ -219,4 +219,66 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Button frame (optional utility classes already on your button) */
+.contact-btn {
+  display: inline-flex;
+  padding: 0.5rem 1.25rem; /* py-2 px-5 */
+}
+
+/* The span that contains arrow + text + animated bg */
+.contact-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Arrow “pill” */
+.arrow-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem; /* p-1 */
+  background: #ffffff; /* white circle behind arrow */
+  border-radius: 9999px;
+  cursor: pointer;
+  z-index: 2; /* above the fill */
+}
+
+.arrow {
+  color: #fe8b5e;
+} /* your orange */
+
+/* Text */
+.contact-text {
+  font-weight: 700; /* bold */
+  color: #ffffff; /* white */
+  position: relative;
+  z-index: 2; /* above the fill */
+  transition: color 0.3s ease;
+}
+
+/* Expanding background (starts hidden at the right edge) */
+.fill-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0; /* hidden */
+  background: #ffffff; /* fill color */
+  transition: width 0.35s ease;
+  z-index: 1; /* behind text + arrow */
+}
+
+/* On ARROW hover ONLY: expand bg across whole span + change text color */
+.arrow-wrapper:hover ~ .fill-bg {
+  width: 100%;
+}
+.arrow-wrapper:hover ~ .contact-text {
+  color: #fe8b5e;
 }

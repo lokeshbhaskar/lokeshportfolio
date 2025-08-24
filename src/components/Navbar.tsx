@@ -3,46 +3,51 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { TbSettings } from "react-icons/tb";
 import { GoArrowUpRight } from 'react-icons/go'
-import { Button } from "@/components/ui/button"
 
 const Navbar = () => {
     const [isRotate, setIsRotate] = useState(false)
+
     const handleSetting = () => {
-        setIsRotate(!isRotate);
+        setIsRotate(!isRotate)
     }
+
     const menuItems = [
         { name: "Home", path: "/" },
         { name: "Work", path: "/pages/work" },
         { name: "About", path: "/pages/about" }
-    ];
-    return (
-        <>
-            {isRotate && (
-                <div
-                    className="fixed inset-0 bg-black/40 backdrop-blur-sm z-10"
-                    onClick={() => setIsRotate(false)}
-                />
-            )}
+    ]
 
-            {/* Dropdown menu */}
-            <div className={`fixed top-20 left-4 md:left-20 p-3 rounded-md z-50 transition-all duration-300 
-                ${isRotate ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}
-            `}>
-                <ul className="space-y-4 md:space-y-0">
+    return (
+        <div className="w-full">
+            {/* Navbar */}
+            <nav className="w-full flex items-center justify-between px-4 md:px-8 py-3  ">
+                {/* Settings Button */}
+                <TbSettings
+                    size={26}
+                    className={`text-gray-700 transition-transform duration-300 cursor-pointer 
+                        ${isRotate ? "rotate-180" : ""}
+                    `}
+                    onClick={handleSetting}
+                />
+            </nav>
+
+            {/* Dropdown Menu */}
+            <div
+                className={`flex items-center justify-center overflow-hidden transition-all duration-500 ease-in-out 
+                    ${isRotate ? "max-h-60" : "max-h-0"}
+                `}
+            >
+                <ul className="flex flex-col gap-4 px-6 py-4 transition-all duration-300 ">
                     {menuItems.map((item, index) => (
                         <li
                             key={index}
-                            className={`flex items-center gap-6 md:gap-12 text-white text-lg md:text-xl cursor-pointer transform transition-all duration-500 ease-in
-                                ${isRotate ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}
-                            `}
-                            style={{
-                                transitionDelay: `${index * 0.2}s`
-                            }}
+                            className="flex items-center gap-2 text-gray-800 text-lg md:text-xl font-semibold "
+                            style={{ transitionDelay: `${index * 0.1}s` }}
                         >
                             <Link
                                 href={item.path}
-                                className={`flex items-center w-full gap-2 auto-underline ${isRotate ? "active" : ""}`}
                                 onClick={() => setIsRotate(false)}
+                                className="flex items-center gap-2"
                             >
                                 {item.name}
                                 <GoArrowUpRight />
@@ -51,37 +56,8 @@ const Navbar = () => {
                     ))}
                 </ul>
             </div>
-
-            {/* Navbar */}
-            <nav className="w-full flex justify-between items-center px-4 md:px-8 py-4 text-sm fixed top-0 left-0
-                backdrop-blur-[16px] backdrop-saturate-[123%] bg-[rgba(0,0,0,0.29)] rounded-[12px] 
-                border border-[rgba(209,213,219,0.3)] z-30">
-                <button onClick={handleSetting}>
-                    <TbSettings
-                        size={30}
-                        className={`text-white transition-transform duration-300 cursor-pointer 
-                            ${isRotate ? "rotate-360" : ""}
-                        `}
-                    />
-                </button>
-
-                {/* Logo */}
-                <div className={`font-bold  text-xl md:text-2xl text-white text-center auto-underline`}>
-                    Lokesh Portfolio
-                </div>
-                
-
-                {/* Connect button (desktop only) */}
-                <div className="hidden md:block">
-                    <Link href="/pages/contact">
-                        <Button variant="secondary" size="lg">
-                            Let's Connect
-                        </Button>
-                    </Link>
-                </div>
-            </nav>
-        </>
+        </div>
     )
 }
 
-export default Navbar;
+export default Navbar
