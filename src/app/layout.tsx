@@ -31,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white px-2 md:px-10 py-1 md:py-4 `}
       >
+        <ScrollProgress />
         <Navbar />
         {children}
         <Footer />
