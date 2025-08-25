@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { GoArrowRight } from "react-icons/go";
 
 export default function ContactButton() {
@@ -8,9 +9,11 @@ export default function ContactButton() {
         Contact Me
       </p>
       {/* Arrow wrapper */}
-      <span className="arrow-wrapper group p-2 bg-white rounded-full cursor-pointer">
-        <GoArrowRight size={20} className="text-[#fe8b5e]" />
-      </span>
+      <Link href="/pages/contact">
+        <span className="arrow-wrapper group p-2 bg-white rounded-full cursor-pointer">
+          <GoArrowRight size={20} className="text-[#fe8b5e]" />
+        </span>
+      </Link>
     </button>
   );
 }

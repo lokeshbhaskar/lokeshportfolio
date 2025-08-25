@@ -17,7 +17,7 @@ const About = () => {
         >
           <h2 className="text-lg font-semibold">About Me</h2>
           <p className="text-sm leading-relaxed text-gray-300">
-            I'm Lokesh, a passionate full-stack web developer with a strong focus
+            I'm Lokesh, a passionate mern-stack web developer with a strong focus
             on creating dynamic and responsive web applications. I specialize in
             technologies like React, Node.js, Express.js, MongoDB, Tailwind CSS.
           </p>
@@ -27,11 +27,11 @@ const About = () => {
           </p>
           <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1">
             <li>
-              <strong>UpdateX4</strong> – A modern news aggregator app using
-              APIs to fetch and display daily updates.
+              <strong>Certify</strong> – a smart certification hub that keeps you updated daily.
+              We fetch trusted data via APIs and present it clean, fast, and user-friendly.
             </li>
             <li>
-              <strong>ExpenseEase</strong> – A budget management dashboard with
+              <strong>Task Manager</strong> – A task management dashboard with
               login/signup, database integration, and user analytics.
             </li>
             <li>

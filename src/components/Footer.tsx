@@ -29,7 +29,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-6 text-xs text-gray-500">
           <p>© 2025 Lokesh. All rights reserved.</p>
-          <p>Built with ❤️ using React & Tailwind</p>
+          <p>Built with ❤️ using Nextjs & Tailwind</p>
         </div>
       </div>
     </footer>

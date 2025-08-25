@@ -70,7 +70,7 @@ export default function SkillsSection({ title = "Skills", skills = skillsSeed })
 
       <header className="mb-8 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-500">{title}</h2>
           <p className="mt-1 text-sm text-muted-foreground/80">
             Filter, search, and watch the skills animate into view.
           </p>
@@ -170,11 +170,10 @@ function CardsGrid({ skills }) {
                 <h3 className="text-base font-semibold leading-tight">{s.name}</h3>
                 <p className="text-xs text-white/60">{s.category}</p>
               </div>
-              <span className="ml-auto text-sm font-semibold text-white/90">{s.level}%</span>
+              {/* <span className="ml-auto text-sm font-semibold text-white/90">{s.level}%</span> */}
             </div>
-
             {/* Progress bar */}
-            <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-white/10">
+            {/* <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-white/10">
               <motion.div
                 className="h-full rounded-full bg-white"
                 initial={{ width: 0 }}
@@ -182,7 +181,7 @@ function CardsGrid({ skills }) {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 120, damping: 20 }}
               />
-            </div>
+            </div> */}
 
             {/* Subtle badges */}
             <div className="mt-3 flex flex-wrap gap-1.5">
@@ -227,7 +226,7 @@ function BarsList({ skills }) {
                 <p className="truncate text-sm font-semibold leading-tight">{s.name}</p>
                 <p className="text-xs text-white/60">{s.category}</p>
               </div>
-              <span className="ml-auto text-sm font-semibold text-white/90">{s.level}%</span>
+              {/* <span className="ml-auto text-sm font-semibold text-white/90">{s.level}%</span> */}
             </div>
 
             <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">

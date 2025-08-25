@@ -1,4 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is my personal portfolio website built with Next.js
+ and Tailwind CSS
+.
+It showcases my projects, skills, and experience as a Web Developer.
+
+✨ Features
+
+⚡ Built with Next.js 14 for performance and SEO
+
+🎨 Styled with Tailwind CSS
+
+📱 Fully responsive design (mobile-first)
+
+🌙 Dark/Light mode (optional if you add it)
+
+🛠 Dynamic and reusable components
+
+📂 Projects and content managed easily
+
+🖼️ Screenshots
+
+<!-- (Add screenshots here once deployed) -->
+
+🔗 Live Demo
+
+👉 View Portfolio
+
+🛠️ Tech Stack
+
+Framework: Next.js
+
+Styling: Tailwind CSS, Framer Motion (for animations)
+
+Deployment: Vercel
+
+Other Tools: TypeScript (optional), ESLint, Prettier
 
 ## Getting Started
 

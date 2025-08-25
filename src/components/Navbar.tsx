@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { TbSettings } from "react-icons/tb";
 import { GoArrowUpRight } from 'react-icons/go'
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
     const [isRotate, setIsRotate] = useState(false)
@@ -41,8 +42,8 @@ const Navbar = () => {
                     {menuItems.map((item, index) => (
                         <li
                             key={index}
-                            className="flex items-center gap-2 text-gray-800 text-lg md:text-xl font-semibold "
-                            style={{ transitionDelay: `${index * 0.1}s` }}
+                            className="flex items-center text-gray-800 text-lg md:text-xl font-semibold cursor-pointer transform transition-all duration-500 ease-in"
+                            style={{ transitionDelay: `${index * 0.3}s` }}
                         >
                             <Link
                                 href={item.path}

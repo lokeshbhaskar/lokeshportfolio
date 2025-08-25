@@ -39,7 +39,6 @@ const Contact = () => {
   return (
     <div className="bg-[#131315] text-white w-full min-h-screen flex items-center justify-center px-6 mt-6 rounded-4xl">
       <div className="max-w-5xl w-full p-8 md:p-12">
-        {/* Heading */}
         <motion.h1
           className="text-4xl md:text-6xl font-extrabold leading-tight mb-8"
           initial={{ opacity: 0, y: -50 }}
@@ -49,7 +48,7 @@ const Contact = () => {
           LET’S DEVELOP <br /> YOUR IDEA
         </motion.h1>
 
-        {/* Email Subscription */}
+        
         <motion.div
           className="mb-12"
           initial={{ opacity: 0, y: 50 }}
@@ -77,7 +76,7 @@ const Contact = () => {
           {status && <p className="mt-2 text-sm text-gray-400">{status}</p>}
         </motion.div>
 
-        {/* Bottom Section */}
+        
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-10 border-t border-gray-800 pt-8"
           initial={{ opacity: 0 }}
@@ -87,8 +86,8 @@ const Contact = () => {
           {/* Social Links */}
           <div className="flex space-x-4">
             {[
-              { icon: <BsGithub size={24} />, link: "#", color: "hover:text-gray-300" },
-              { icon: <LiaLinkedin size={24} />, link: "#", color: "text-blue-400" },
+              { icon: <BsGithub size={24} />, link: "https://github.com/lokeshbhaskar?tab=repositories", color: "hover:text-gray-300" },
+              { icon: <LiaLinkedin size={24} />, link: "https://www.linkedin.com/in/lokesh-kumar-3369a8219/", color: "text-blue-400" },
               { icon: <FaInstagram size={24} />, link: "#", color: "text-pink-400" },
             ].map((social, index) => (
               <motion.a
@@ -121,8 +120,6 @@ const Contact = () => {
             </p>
             <p>Address: Siwan, Bihar</p>
           </div>
-
-          {/* Extra Note / CTA */}
           <motion.div
             className="flex items-center justify-center md:justify-end"
             whileHover={{ scale: 1.05 }}
