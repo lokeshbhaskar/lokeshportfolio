@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from "react";
+"use client"
+import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Code2, Layers, Server, Wrench, Database, Cpu, Rocket } from "lucide-react";
 

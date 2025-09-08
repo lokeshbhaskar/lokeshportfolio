@@ -1,6 +1,18 @@
 [
-  {
+   {
     "id": 1,
+    "title": "AI-VENT - smart event planning website",
+    "description": "An AI-powered event planning website that helps users plan and organize events efficiently.",
+    "images": [
+       "/ai2.png",
+       "/ai3.png",
+       "/ai4.png",
+       "/ai5.png"  
+    ],
+    "link": "https://ai-vent-planner-1.onrender.com/#/"
+  },
+  {
+    "id": 2,
     "title": "Certify",
     "description": "A personal portfolio built with React and Tailwind CSS.",
     "images": [
@@ -28,5 +40,6 @@
     ],
     "link": "https://task-manager-1-xu5i.onrender.com/login"
   }
+ 
   
 ]

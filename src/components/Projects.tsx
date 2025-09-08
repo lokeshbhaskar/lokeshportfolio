@@ -17,7 +17,7 @@ const Projects = () => {
     <div className="relative w-full min-h-screen bg-[#131315] text-white  mt-6 rounded-4xl">
       {/* Left Section Label */}
       <div className="absolute left-4 top-10 hidden md:flex flex-col items-center z-10">
-        <p className="text-3xl text-gray-400">[ 02 ]</p>
+        {/* <p className="text-3xl text-gray-400">[ 02 ]</p> */}
         <p className="text-5xl font-extrabold text-gray-300 hover:text-amber-200    ">
           Projects
         </p>
